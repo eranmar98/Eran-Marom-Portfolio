@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eran Marom – Portfolio</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="Styles/index.css" />
+
+  <!-- JavaScript -->
+  <script src="Scripts/index.js" defer></script>
+
+ 
+</head>
+
+<body>
+  <!-- =======================
+       About / Hero Section
+  ======================== -->
+  <section id="about">
+    <img src="/Assets/images/user.png" alt="Eran Marom" />
+    <h1>Eran Marom</h1>
+    <p>Hi, I'm a full-stack student passionate about software, logic, and clean code. I specialize in C#, JavaScript, and building modern web interfaces.</p>
+  </section>
+
+  <!-- =======================
+       GitHub Projects
+  ======================== -->
+  <section id="projects">
+    <h2>My GitHub Projects</h2>
+    <div id="projects-container">
+      <!-- Project cards will be injected here -->
+    </div>
+  </section>
+
+  <!-- =======================
+       Skills Section
+  ======================== -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card" data-progress="60%">
+        <div class="skill-header">
+          <img src="/Assets/images/c-sharp.png" alt="C# Icon" />
+          <span>C#</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-progress="50%">
+        <div class="skill-header">
+          <img src="/Assets/images/js.png" alt="JavaScript Icon" />
+          <span>JavaScript</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-progress="50%">
+        <div class="skill-header">
+          <img src="/Assets/images/html.png" alt="HTML Icon" />
+          <span>HTML</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+
+      <div class="skill-card" data-progress="50%">
+        <div class="skill-header">
+          <img src="/Assets/images/css-3.png" alt="CSS Icon" />
+          <span>CSS</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <button id="toggleSkills">See Less Skills</button>
+  </section>
+
+  <!-- =======================
+       Contact Section
+  ======================== -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  <div id="social-links">
+  <a href="https://github.com/YOUR_USERNAME" target="_blank">
+    <img src="/Assets/images/github.png" alt="GitHub" />
+  </a>
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">
+    <img src="/Assets/images/linkedin.png" alt="LinkedIn" />
+  </a>
+</div>
+  </section>
+</body>
+</html>
