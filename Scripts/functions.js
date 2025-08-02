@@ -2,11 +2,12 @@
 export function isInViewport(el) {
   const rect = el.getBoundingClientRect();
   return rect.top < window.innerHeight && rect.bottom > 0;
-  
 }
 
 // Animate the progress bars once when in view
 export function animateSkillsOnScroll() {
+    
+    //get each skill card
   document.querySelectorAll('.skill-card').forEach(card => {
     const progress = card.querySelector('.progress');
     const target = card.dataset.progress;
