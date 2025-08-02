@@ -1,0 +1,51 @@
+#skills {
+  background: #0f172a; /* same as hero section */
+  padding: 4rem 2rem;
+  max-width: 960px;
+  margin: 4rem auto;
+  text-align: center;
+  color: #f1f5f9;
+  border-radius: 16px;
+}
+
+#skills h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #facc15; /* golden yellow like active nav link */
+  margin-bottom: 2rem;
+}
+
+/* Grid layout */
+.skills-grid.simple {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* Each skill card */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.skill img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+}
+
+.skill:hover img {
+  transform: scale(1.1);
+}

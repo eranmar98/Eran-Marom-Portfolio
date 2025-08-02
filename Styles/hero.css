@@ -1,0 +1,107 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f172a 0%, #111827 100%);
+  color: #f1f5f9;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/* Soft glowing background orb */
+#about::before {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%);
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: 0;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Optional soft bottom fade */
+#about::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent, #0f172a);
+  z-index: 0;
+}
+
+/* Avatar image */
+#about img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.06);
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+#about img:hover {
+  transform: scale(1.05);
+}
+
+/* Subtitle */
+#about .subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #94a3b8;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+/* Name/title */
+#about h1 {
+  font-size: 2.8rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: #e2e8f0;
+  z-index: 2;
+  margin: 0.2rem 0;
+}
+
+/* Tagline */
+#about p {
+  max-width: 640px;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #cbd5e1;
+  margin-top: 1rem;
+  z-index: 2;
+  padding: 0 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #about img {
+    width: 160px;
+    height: 160px;
+  }
+
+  #about h1 {
+    font-size: 2.2rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+}
