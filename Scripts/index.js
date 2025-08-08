@@ -1,4 +1,5 @@
 import { animateSkillsOnScroll } from './functions.js';
+import { displayGitHubProjects } from './functions.js';
 
 // Listen for scroll and trigger check
 window.addEventListener('scroll', animateSkillsOnScroll);
@@ -16,4 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveLink);
   updateActiveLink();
+});
+
+// Load Github projects
+document.addEventListener("DOMContentLoaded", () => {
+  displayGitHubProjects(); 
 });

@@ -1,0 +1,94 @@
+#projects-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.project-card {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 24px;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00bfff33 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.35);
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: #00bfff;
+  position: relative;
+  z-index: 2;
+}
+
+.project-card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.language-badges {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 2;
+  position: relative;
+}
+
+.language-badge {
+  background: linear-gradient(to right, #00bfff55, #0055ff33);
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 2px #00bfff;
+  backdrop-filter: blur(5px);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}

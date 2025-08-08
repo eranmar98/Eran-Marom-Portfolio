@@ -3,6 +3,7 @@
 @import url(/Styles/skills.css);
 @import url(/Styles/navbar.css);
 @import url(/Styles/contact.css);
+@import url(/Styles/projects.css);
 
 /* Reset & Base styles for consistency across browsers */
 * {
