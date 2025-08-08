@@ -1,3 +1,4 @@
+/* Styles the navigation bar container: fixed at top, full width, blurred background, dark semi-transparent color, high z-index, padding, and shadow */
 #nav-bar {
   position: fixed;
   top: 0;
@@ -10,6 +11,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Styles the navigation list: horizontal flex layout, centered, spaced, no default list styles */
 #nav-bar ul {
   display: flex;
   justify-content: center;
@@ -20,10 +22,12 @@
   padding: 0;
 }
 
+/* Each navigation list item: relative positioning for pseudo-elements */
 #nav-bar ul li {
   position: relative;
 }
 
+/* Styles the navigation links: no underline, soft blue color, uppercase, spaced letters, smooth color transition, custom font */
 #nav-bar ul li a {
   text-decoration: none;
   color: #e0f2fe; /* soft icy-blue */
@@ -35,10 +39,12 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
+/* Hover effect for navigation links: changes text color to sky blue */
 #nav-bar ul li a:hover {
   color: #38bdf8; /* sky blue */
 }
 
+/* Underline effect for navigation links: animated blue line appears on hover */
 #nav-bar ul li a::after {
   content: "";
   position: absolute;
@@ -50,11 +56,12 @@
   transition: width 0.3s ease;
 }
 
+/* Expands the underline to full width on hover */
 #nav-bar ul li a:hover::after {
   width: 100%;
 }
 
-/* Active link indicator (optional) */
+/* Styles the active navigation link: highlights with yellow color */
 #nav-bar ul li a.active {
   color: #facc15;
 }
