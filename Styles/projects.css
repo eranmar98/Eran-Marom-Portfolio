@@ -1,3 +1,7 @@
+section {
+  background: transparent; 
+}
+
 #projects-container {
   display: grid;
   gap: 2rem;
@@ -46,7 +50,7 @@
 .project-card h3 {
   margin: 0 0 0.5rem;
   font-size: 1.4rem;
-  color: #00bfff;
+  color: #ffffff;
   position: relative;
   z-index: 2;
 }
@@ -92,3 +96,6 @@
 .project-link:hover {
   text-decoration: underline;
 }
+
+
+

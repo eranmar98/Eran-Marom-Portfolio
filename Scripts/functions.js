@@ -31,6 +31,7 @@ export function updateActiveLink() {
 
 // Fetch the github API function
 // Load and display GitHub projects dynamically
+// Used self-taught exception handling in case of 
 export async function displayGitHubProjects() {
   const username = 'eranmar98';
   const container = document.getElementById('projects-container');
@@ -41,14 +42,18 @@ export async function displayGitHubProjects() {
     );
     const repos = await response.json();
 
+    // Loop over each repository in repos
     for (const repo of repos) {
+      // Fork = someone else's project
       // Skip forks or repos without a description
-      if (repo.fork || !repo.description) continue;
+      if (repo.fork || !repo.description) 
+        continue;
 
       // Fetch all languages for this repo
       const languagesResponse = await fetch(
         `https://api.github.com/repos/${username}/${repo.name}/languages`
       );
+      
       const languagesData = await languagesResponse.json();
       const allLanguages = Object.keys(languagesData);
       const languageBadges = allLanguages
@@ -59,6 +64,7 @@ export async function displayGitHubProjects() {
       const card = document.createElement('div');
       card.classList.add('project-card');
 
+      // Dynamically fills the project details card
       card.innerHTML = `
   <h3>${repo.name}</h3>
   <p>${repo.description}</p>
@@ -66,7 +72,7 @@ export async function displayGitHubProjects() {
   <a href="${repo.html_url}" target="_blank" class="project-link">View on GitHub</a>
 `;
 
-      container.appendChild(card);
+      container.appendChild(card); // Append the project card
     }
   } catch (error) {
     console.error('Failed to load GitHub projects:', error);
