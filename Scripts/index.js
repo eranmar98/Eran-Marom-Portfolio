@@ -6,8 +6,9 @@ window.addEventListener('load', animateSkillsOnScroll); // if it's already in vi
 
 // AOS + active link + GitHub projects
 document.addEventListener('DOMContentLoaded', () => {
+
   // AOS
-  AOS.init({ duration: 1000, once: true });
+  AOS.init({ duration: 500, once: true });
 
   // cache once
   const sections = document.querySelectorAll('section');

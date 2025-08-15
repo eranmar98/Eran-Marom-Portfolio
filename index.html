@@ -6,14 +6,14 @@
     <title>Eran Marom – Portfolio</title>
 
     <!-- Styles and Scripts -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script type="module" src="./Scripts/index.js"></script>
     <link rel="stylesheet" href="./Styles/index.css" />
 
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+   
+
   </head>
 
   <body>
@@ -55,9 +55,9 @@
        GitHub Projects
   ======================== -->
     <section id="projects" data-aos="fade-up">
-      <h2 data-aos="fade-up">My GitHub Projects</h2>
       <div id="projects-container" data-aos="zoom-in" data-aos-delay="300">
-        <!-- Will be added dynamically via JS-->
+          <h2 data-aos="fade-up">My GitHub Projects</h2>
+        <!-- Projects will be added dynamically by JS-->
       </div>
     </section>
 
@@ -92,15 +92,15 @@
   ======================== -->
    <section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
+<form id="contact-form" action="https://formspree.io/f/abcdxyz" method="POST">
+  <div class="row">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="_replyto" placeholder="Your Email" required />
+  </div>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
 
-  <form id="contact-form">
-    <div class="row">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-    </div>
-    <textarea placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
 
   <div id="social-links">
     <a href="https://github.com/YOUR_USERNAME" target="_blank">

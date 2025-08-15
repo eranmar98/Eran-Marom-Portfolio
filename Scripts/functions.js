@@ -11,13 +11,16 @@ export function animateSkillsOnScroll() {}
 // Function to mark the link in the navbar when the same section is on display
 export function updateActiveLink(sections, navLinks) {
   let current = '';
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const r = section.getBoundingClientRect();
     if (r.top <= 100 && r.bottom >= 100) current = section.id;
   });
 
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+  navLinks.forEach((link) => {
+    link.classList.toggle(
+      'active',
+      link.getAttribute('href') === `#${current}`
+    );
   });
 }
 

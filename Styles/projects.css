@@ -1,8 +1,16 @@
-section {
-  background: transparent; 
+/* ---- Elegant Projects Section (warm accent, no neon) ---- */
+:root{
+  --proj-accent: #e8c36a;      /* soft gold accent */
+  --proj-bg: #0f1218;          /* deep slate */
+  --proj-card: #141924;        /* card base */
+  --proj-stroke: rgba(255,255,255,0.08);
+  --proj-text: #e9edf4;
+  --proj-muted: #b8c0cf;
 }
 
-#projects-container {
+section { background: transparent; }
+
+#projects-container{
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -10,118 +18,135 @@ section {
   padding: 0 1rem;
 }
 
-.project-card {
-  background: rgba(20, 20, 30, 0.8);
-  border: 1px solid rgba(0, 255, 255, 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  padding: 24px;
-  color: #f0f0f0;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+/* Pretty headline inside the grid */
+#projects-container > h2{
+  grid-column: 1 / -1;
+  margin: 0 0 .75rem;
+  color: var(--proj-text);
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: .3px;
+  line-height: 1.2;
+  position: relative;
+}
+#projects-container > h2::after{
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: .55rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--proj-accent), transparent);
+  opacity: .9;
+}
+
+/* Make <a class="project-card"> or <div> look the same */
+.project-card{
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.08)),
+    var(--proj-card);
+  border: 1px solid var(--proj-stroke);
+  border-radius: 18px;
+  padding: 22px;
+  color: var(--proj-text);
   position: relative;
   overflow: hidden;
-  z-index: 1;
-  box-shadow: inset 0 0 12px rgba(0, 255, 255, 0.05);
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0,191,255,0.25) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.35s ease, transform 0.4s ease;
   z-index: 0;
-  transform: scale(0.8);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  box-shadow: 0 10px 24px rgba(0,0,0,.28);
+  text-decoration: none; /* if it's an <a> */
 }
 
-.project-card:hover::before {
-  opacity: 1;
-  transform: scale(1);
+/* subtle highlight vignette, no neon */
+.project-card::before{
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 55%;
+  background: radial-gradient(
+    120% 80% at 15% 0%,
+    rgba(255,255,255,.06) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  opacity: .9;
 }
 
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.3),
-    0 8px 25px rgba(0,0,0,0.4);
-  border-color: rgba(0, 255, 255, 0.45);
+.project-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,.16);
+  box-shadow: 0 16px 38px rgba(0,0,0,.35);
 }
 
-.project-card h3 {
-  margin: 0 0 0.6rem;
-  font-size: 1.5rem;
-  color: #ffffff;
-  position: relative;
-  z-index: 2;
-  letter-spacing: 0.5px;
+/* Title & text */
+.project-card h3{
+  margin: 0 0 .55rem;
+  font-size: 1.35rem;
+  letter-spacing: .2px;
+  color: var(--proj-text);
 }
-
-.project-card p {
-  margin: 0.5rem 0;
-  font-size: 0.96rem;
+.project-card p{
+  margin: .5rem 0;
+  font-size: .96rem;
   line-height: 1.65;
-  position: relative;
-  z-index: 2;
-  color: #cfd9df;
+  color: var(--proj-muted);
 }
 
-.language-badges {
-  margin-top: 0.9rem;
+/* Language badges: tone‑on‑tone, elegant */
+.language-badges{
+  margin-top: .9rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  z-index: 2;
-  position: relative;
+  gap: .5rem .6rem;
+}
+.language-badge{
+  background: rgba(255,255,255,.06);
+  color: var(--proj-text);
+  padding: .35rem .65rem;
+  font-size: .72rem;
+  border-radius: 999px;
+  border: 1px solid var(--proj-stroke);
+  transition: transform .2s ease, background .2s ease;
+}
+.language-badge:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.09);
 }
 
-.language-badge {
-  background: linear-gradient(135deg, rgba(0,191,255,0.35), rgba(0,85,255,0.25));
-  color: #fff;
-  padding: 5px 12px;
-  font-size: 0.75rem;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 255, 255, 0.25);
-  text-shadow: 0 0 2px #00bfff;
-  backdrop-filter: blur(5px);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.language-badge:hover {
-  background: linear-gradient(135deg, rgba(0,255,255,0.55), rgba(0,85,255,0.45));
-  transform: scale(1.05);
-}
-
-.project-link {
+/* CTA/link inside card with a subtle accent underline */
+.project-link{
   display: inline-block;
-  margin-top: 1.3rem;
-  font-weight: bold;
-  color: #00e5ff;
+  margin-top: 1.1rem;
+  font-weight: 600;
+  color: var(--proj-accent);
   text-decoration: none;
   position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
+  transition: color .25s ease;
 }
-
-.project-link::after {
-  content: '';
+.project-link::after{
+  content: "";
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #00e5ff;
-  transition: width 0.3s ease;
+  left: 0; bottom: -2px;
+  width: 0%; height: 2px;
+  background: var(--proj-accent);
+  transition: width .25s ease;
+}
+.project-link:hover{
+  color: #ddb659; 
+}
+.project-link:hover::after{ width: 100%; }
+
+/* Focus styles (keyboard) */
+.project-card:focus-visible,
+.project-link:focus-visible{
+  outline: 2px solid var(--proj-accent);
+  outline-offset: 3px;
+  border-radius: 10px;
 }
 
-.project-link:hover {
-  color: #00ffff;
-}
-
-.project-link:hover::after {
-  width: 100%;
+/* Small screens: ease spacing a bit */
+@media (max-width: 420px){
+  #projects-container{ gap: 1.25rem; }
+  .project-card{ padding: 18px; }
 }

@@ -72,3 +72,5 @@
   outline-offset: 3px;
   border-radius: 4px;
 }
+section { scroll-margin-top: 90px; }
+html { scroll-behavior: smooth; }
