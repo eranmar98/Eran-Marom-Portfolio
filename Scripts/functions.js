@@ -9,11 +9,10 @@ export function isInViewport(el) {
 export function animateSkillsOnScroll() {}
 
 // Function to mark the link in the navbar when the same section is on display
-// Loop through each <section> tag, get their size and position\
-// Loop through links in the navbar and remove their active status accordingly
 export function updateActiveLink() {
   let currentSection = '';
 
+  // Loop through each <section> tag, get their size and position
   sections.forEach((section) => {
     const rect = section.getBoundingClientRect();
     if (rect.top <= 100 && rect.bottom >= 100) {
@@ -21,6 +20,7 @@ export function updateActiveLink() {
     }
   });
 
+  // Loop through links in the navbar and remove their active status accordingly
   navLinks.forEach((link) => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${currentSection}`) {
@@ -31,7 +31,7 @@ export function updateActiveLink() {
 
 // Fetch the github API function
 // Load and display GitHub projects dynamically
-// Used self-taught exception handling in case of 
+// Used self-taught exception handling in case of
 export async function displayGitHubProjects() {
   const username = 'eranmar98';
   const container = document.getElementById('projects-container');
@@ -46,14 +46,13 @@ export async function displayGitHubProjects() {
     for (const repo of repos) {
       // Fork = someone else's project
       // Skip forks or repos without a description
-      if (repo.fork || !repo.description) 
-        continue;
+      if (repo.fork || !repo.description) continue;
 
       // Fetch all languages for this repo
       const languagesResponse = await fetch(
         `https://api.github.com/repos/${username}/${repo.name}/languages`
       );
-      
+
       const languagesData = await languagesResponse.json();
       const allLanguages = Object.keys(languagesData);
       const languageBadges = allLanguages
@@ -71,10 +70,10 @@ export async function displayGitHubProjects() {
   <div class="language-badges">${languageBadges}</div>
   <a href="${repo.html_url}" target="_blank" class="project-link">View on GitHub</a>
 `;
-
       container.appendChild(card); // Append the project card
     }
   } catch (error) {
+    //error handling
     console.error('Failed to load GitHub projects:', error);
     container.innerHTML = `<p>Failed to load GitHub projects. Please try again later.</p>`;
   }
