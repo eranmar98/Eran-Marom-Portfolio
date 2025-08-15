@@ -9,23 +9,15 @@ export function isInViewport(el) {
 export function animateSkillsOnScroll() {}
 
 // Function to mark the link in the navbar when the same section is on display
-export function updateActiveLink() {
-  let currentSection = '';
-
-  // Loop through each <section> tag, get their size and position
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= 100 && rect.bottom >= 100) {
-      currentSection = section.id;
-    }
+export function updateActiveLink(sections, navLinks) {
+  let current = '';
+  sections.forEach(section => {
+    const r = section.getBoundingClientRect();
+    if (r.top <= 100 && r.bottom >= 100) current = section.id;
   });
 
-  // Loop through links in the navbar and remove their active status accordingly
-  navLinks.forEach((link) => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${currentSection}`) {
-      link.classList.add('active');
-    }
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
   });
 }
 

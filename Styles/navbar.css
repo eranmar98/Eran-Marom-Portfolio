@@ -65,3 +65,10 @@
 #nav-bar ul li a.active {
   color: #facc15;
 }
+
+#nav-bar a:focus-visible,
+.project-link:focus-visible {
+  outline: 2px solid #00ffff;
+  outline-offset: 3px;
+  border-radius: 4px;
+}

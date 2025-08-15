@@ -61,7 +61,7 @@
 .skill img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  /* object-fit: contain; */
   transition: transform 0.3s ease;
   display: block;
   margin: 0 auto;
