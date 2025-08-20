@@ -7,14 +7,14 @@ window.addEventListener('load', animateSkillsOnScroll); // if it's already in vi
 // AOS + active link + GitHub projects
 document.addEventListener('DOMContentLoaded', () => {
 
-  // AOS
+  // Animation on scrool init
   AOS.init({ duration: 500, once: true });
 
   // cache once
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('#nav-bar ul li a');
 
-  // call with args
+  // call with arguments
   const onScroll = () => updateActiveLink(sections, navLinks);
   window.addEventListener('scroll', onScroll);
   onScroll(); // set correct active link on load
