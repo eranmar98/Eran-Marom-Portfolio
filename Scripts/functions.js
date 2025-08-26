@@ -2,7 +2,7 @@
 // getBoudingClientRect() - get size and position of element
 export function isInViewport(el) {
   const rect = el.getBoundingClientRect();
-  return rect.top < window.innerHeight && rect.bottom > 0;
+  return rect.top < window.innerHeight && rect.bottom > 0; // return true if in viewport
 }
 
 // Animate the progress bars once when in view
