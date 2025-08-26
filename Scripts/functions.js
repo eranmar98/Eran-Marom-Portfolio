@@ -26,7 +26,7 @@ export function updateActiveLink(sections, navLinks) {
 
 // Fetch the github API function
 // Load and display GitHub projects dynamically
-// Used self-taught exception handling in case of
+// Used self-taught exception handling in case of error
 export async function displayGitHubProjects() {
   const username = 'eranmar98';
   const container = document.getElementById('projects-container');
@@ -73,3 +73,36 @@ export async function displayGitHubProjects() {
     container.innerHTML = `<p>Failed to load GitHub projects. Please try again later.</p>`;
   }
 }
+
+export function initContactForm({ publicKey, serviceId, templateId }) {
+  if (!window.emailjs) {
+    console.warn('EmailJS SDK not loaded.');
+    return;
+  }
+  emailjs.init({ publicKey });
+
+  const form   = document.getElementById('contact-form');
+  const btn    = document.getElementById('sendBtn') || form?.querySelector('button[type="submit"]');
+  const status = document.getElementById('form-status');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (btn) { btn.disabled = true; var original = btn.textContent; btn.textContent = 'Sending…'; }
+    if (status) status.textContent = '';
+
+    try {
+      await emailjs.sendForm(serviceId, templateId, '#contact-form');
+      form.reset();
+      if (status) { status.textContent = '✅ Message sent!'; status.className = 'ok'; }
+    } catch (err) {
+      console.error(err);
+      if (status) { status.textContent = '❌ Could not send. Try again.'; status.className = 'err'; }
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = original; }
+    }
+  });
+}
+

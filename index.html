@@ -15,11 +15,23 @@
    
 
   </head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // replace with your real Public Key from EmailJS dashboard
+  emailjs.init({ publicKey: "LaA8GkckyWRFet9_4" });
+</script>
 
   <body>
     <!-- =======================
        Navigation Bar
   ======================== -->
+  <header>
+  <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-bar">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
     <nav id="nav-bar">
       <ul>
         <li><a href="#about" class="active">About</a></li>
@@ -28,7 +40,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
+</header>
     
     <div class="bg-blur blob1"></div>
 
@@ -47,7 +59,7 @@
       </div>
       <h1 data-aos="fade-up" data-aos-delay="400">ERAN MAROM</h1>
 <p class="typing-line">Learning fast. Building real. Improving always.</p>
-        Generative Design | C# | JavaScript | Web Interfaces
+        <span class="about-role">Software engineering student | Mastering Full Stack | Passionate about building scalable web apps | Always learning new technologies</span>
       </p>
     </section>
 
@@ -103,7 +115,7 @@
 
 
   <div id="social-links">
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">
+    <a href="https://github.com/eranmar98" target="_blank">
       <img src="/Assets/images/github.png" alt="GitHub" />
     </a>
     <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">
@@ -111,6 +123,14 @@
     </a>
   </div>
 </section>
+
+<footer class="footer">
+  <span>© 2025 Eran Marom</span>
+  <span class="dot">•</span>
+  <span>Built with HTML · CSS · JS</span>
+</footer>
+
+
 
   </body>
 </html>

@@ -4,6 +4,7 @@
 @import url(/Styles/navbar.css);
 @import url(/Styles/contact.css);
 @import url(/Styles/projects.css);
+@import url(/Styles/footer.css);
 
 /* Reset & Base styles */
 * {
