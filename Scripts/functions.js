@@ -75,48 +75,45 @@ export async function displayGitHubProjects() {
 }
 
 export function initContactForm() {
-  const form   = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-  const btn    = document.getElementById("sendBtn");
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  const btn = document.getElementById('sendBtn');
 
   if (!form) return; // if contact form not on page
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const data = new FormData(form);
     btn.disabled = true;
     const original = btn.textContent;
-    btn.textContent = "Sending…";
-    status.textContent = "";
+    btn.textContent = 'Sending…';
+    status.textContent = '';
 
     try {
       const res = await fetch(form.action, {
         method: form.method,
         body: data,
-        headers: { Accept: "application/json" },
+        headers: { Accept: 'application/json' },
       });
 
       if (res.ok) {
         form.reset();
-        status.textContent = "✅ Message sent successfully!";
-        status.className = "ok";
+        status.textContent = '✅ Message sent successfully!';
+        status.className = 'ok';
       } else {
         const err = await res.json();
         status.textContent = err.errors
           ? err.errors[0].message
-          : "❌ Could not send.";
-        status.className = "err";
+          : '❌ Could not send.';
+        status.className = 'err';
       }
     } catch (error) {
-      status.textContent = "❌ Network error. Try again later.";
-      status.className = "err";
+      status.textContent = '❌ Network error. Try again later.';
+      status.className = 'err';
     } finally {
       btn.disabled = false;
       btn.textContent = original;
     }
   });
 }
-
-
-
