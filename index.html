@@ -49,13 +49,13 @@
   ======================== -->
     <section id="about" data-aos="fade-up">
       <img
-        src="/Assets/images/avatar.png"
+        src="/Assets/images/EranMarom.png"
         alt="3D Visual or Avatar"
         data-aos="zoom-in"
         data-aos-delay="200"
       />
       <div class="subtitle" data-aos="fade-up" data-aos-delay="300">
-        ILLUSTRATION
+        Junior Web Developer 
       </div>
       <h1 data-aos="fade-up" data-aos-delay="400">ERAN MAROM</h1>
 <p class="typing-line">Learning fast. Building real. Improving always.</p>
@@ -102,19 +102,27 @@
     <!-- =======================
        Contact Section
   ======================== -->
-   <section id="contact" data-aos="fade-up">
+<section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
-<form id="contact-form" action="https://formspree.io/f/abcdxyz" method="POST">
-  <div class="row">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="_replyto" placeholder="Your Email" required />
-  </div>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
 
+  <form id="contact-form" action="https://formspree.io/f/xeozdwao" method="POST">
+    <div class="row">
+      <input type="text"  name="name"   placeholder="Your Name"  required />
+      <input type="email" name="email"  placeholder="Your Email" required />
+    </div>
 
-  <div id="social-links">
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <!-- optional spam honeypot -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <!-- optional subject line -->
+    <input type="hidden" name="_subject" value="New message from portfolio site" />
+
+    <button type="submit" id="sendBtn">Send Message</button>
+    <p id="form-status" aria-live="polite"></p>
+  </form>
+    <div id="social-links">
     <a href="https://github.com/eranmar98" target="_blank">
       <img src="/Assets/images/github.png" alt="GitHub" />
     </a>

@@ -2,8 +2,8 @@ import {
   updateActiveLink,
   animateSkillsOnScroll,
   displayGitHubProjects,
+  initContactForm
 } from './functions.js';
-import { initContactForm } from './functions.js';
 
 // Listen for scroll and trigger check
 window.addEventListener('scroll', animateSkillsOnScroll); //if not in view
@@ -26,18 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   displayGitHubProjects();
 });
 
-// contact form
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    const name = fd.get('name');
-    alert(`Thanks, ${name}! I’ll get back to you soon.`);
-    form.reset();
-  });
-}
-
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav-bar');
 
@@ -55,10 +43,6 @@ nav.addEventListener('click', (e) => {
   }
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  initContactForm({
-    publicKey: 'LaA8GkckyWRFet9_4',
-    serviceId: 'service_km3xffi',
-    templateId: 'template_5ayyr5r',
-  });
+document.addEventListener('DOMContentLoaded', () => {
+  initContactForm();
 });
