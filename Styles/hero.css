@@ -105,3 +105,29 @@
     font-size: 1rem;
   }
 }
+
+/* Long role/description text */
+#about .about-role {
+  display: block;                /* makes it behave like a paragraph */
+  max-width: 640px;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-top: 0.75rem;
+  z-index: 2;
+  padding: 0 1rem;
+  opacity: 0.9;
+  word-wrap: break-word;         /* break long words if needed */
+  overflow-wrap: anywhere;       
+  text-align: center;            
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #about .about-role {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 95%;
+  }
+}

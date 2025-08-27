@@ -2,7 +2,7 @@ import {
   updateActiveLink,
   animateSkillsOnScroll,
   displayGitHubProjects,
-  initContactForm
+   initContactForm
 } from './functions.js';
 
 // Listen for scroll and trigger check
@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const onScroll = () => updateActiveLink(sections, navLinks);
   window.addEventListener('scroll', onScroll);
   onScroll(); // set correct active link on load
-
-  // GitHub projects
+   
+    // GitHub projects
   displayGitHubProjects();
+
 });
 
 const hamburger = document.getElementById('hamburger');

@@ -76,3 +76,23 @@
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* Default size (desktop) */
+.skill img {
+  width: 80px;
+  height: auto;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .skill img {
+    width: 60px;
+  }
+}
+
+/* Phones */
+@media (max-width: 300px) {
+  .skill img {
+    width: 45px;
+  }
+}
